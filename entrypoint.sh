@@ -33,13 +33,13 @@ if [ "${KCP_FLAG}" == "true" ] && [ "${KCP_CONFIG}" != "" ]; then
     echo -e "\033[32mStarting kcptun......\033[0m"
     ${KCP_MODULE} ${KCP_CONFIG} 2>&1 &
 else
-   # echo -e "\033[33mKcptun not started......\033[0m"
+    echo -e "\033[33mKcptun not started......\033[0m"
 fi
 
 if [ "${SS_CONFIG}" != "" ]; then
     echo -e "\033[32mStarting shadowsocks......\033[0m"
-    #${SS_MODULE} ${SS_CONFIG}
+    ${SS_MODULE} ${SS_CONFIG}
 else
     echo -e "\033[31mError: SS_CONFIG is blank!\033[0m"
-    #exit 1
+    exit 1
 fi
